@@ -5,7 +5,13 @@
 </template>
 <script>
     export default {
-        props: ['displayText']
+        props: {
+            displayText: [String],
+            containerHeight: {
+                type: Number,
+                default: 200
+            }
+        }
     }
 </script>
 <style scoped>
