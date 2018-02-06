@@ -1,13 +1,50 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12"></div>
+            <div class="col-sm-12">
+                <nav-header @pageWasChanged="currentPage = $event"></nav-header>
+                <keep-alive>
+                    <component :is="currentPage"></component>
+                </keep-alive>
+            </div>
         </div>
     </div>
 </template>
 <script>
 
+     import Header from './components/header.vue'
+     import CardFront from './components/card/CardFront.vue'
+     import CardInsideLeft from './components/card/CardInsideLeft.vue'
+     import CardInsideRight from './components/card/CardInsideRight.vue'
+     import CardBack from './components/card/CardBack.vue'
+    
+        export default {
+        data: function() {
+            return {
+                currentPage: 'cardFront'
+            }
+        },
+        components: {
+            navHeader: Header,
+            cardFront: CardFront,
+            cardInsideLeft: CardInsideLeft,
+            cardInsideRight: CardInsideRight,
+            cardBack: CardBack
+
+        }
+    }
+
 </script>
  <style>
-   
+   body {
+       font-family: 'Raleway', sans-serif;
+       color: #333;
+       
+   }
+   h1 {
+       font-weight: 800;
+   }
+   a {
+       cursor: pointer;
+   }
  </style>
