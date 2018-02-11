@@ -6,7 +6,7 @@
                 <keep-alive>
                     <component :is="currentPage"></component>
                 </keep-alive>
-                <cc-footer>
+                <ccfooter>
                     <p class="text-center">&copy; Creative Cards </p>
                     <nav>
                         <ul class="nav justify-content-center">
@@ -15,19 +15,20 @@
                             <li class="nav-item"><a class="nav-link">Contact Us</a></li>
                         </ul>
                     </nav>
-                </cc-footer>
+                </ccfooter>
             </div>
         </div>
     </div>
 </template>
 <script>
- 
+
+     import Firebase from './firebase-config.js'   
      import Header from './components/header.vue'
      import CardFront from './components/card/CardFront.vue'
      import CardInsideLeft from './components/card/CardInsideLeft.vue'
      import CardInsideRight from './components/card/CardInsideRight.vue'
      import CardBack from './components/card/CardBack.vue'
-     import Footer from './components/Footer.vue'
+     import Footer from './components/footer.vue'
     
         export default {
         data: function() {
@@ -41,7 +42,7 @@
             cardInsideLeft: CardInsideLeft,
             cardInsideRight: CardInsideRight,
             cardBack: CardBack,
-            ccfooter:Footer
+            ccfooter: Footer
 
         }
     }
@@ -59,4 +60,5 @@
    a {
        cursor: pointer;
    }
+   
  </style>

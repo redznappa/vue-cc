@@ -15,7 +15,9 @@
 <script>
     export default {
         data: function () {
-            textBoxInput: ""
+            return {
+            textBoxInput: ''
+            }
         },
         methods: {
             textChanged: function () {
